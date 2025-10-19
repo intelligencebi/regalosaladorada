@@ -15,20 +15,11 @@
     html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 
     :root{
-      /* Paleta Sala Dorada (oro + negro/ébano) */
-      --gold:#F2C249;          /* oro principal */
-      --gold-soft:#FFD782;     /* oro suave/brillo */
-      --amber:#E7A72E;         /* ámbar */
-      --bronze:#8C5A1E;        /* bronce */
-      --ebony:#0E0B08;         /* fondo casi negro */
-      --coal:#1B1510;          /* marrón muy oscuro */
-
-      --glow:#FFE07A;          /* glow dorado */
-      --white:#FFFFFF; --mist:#F7F2E8;
+      --gold:#F2C249; --gold-soft:#FFD782; --amber:#E7A72E; --bronze:#8C5A1E;
+      --ebony:#0E0B08; --coal:#1B1510; --glow:#FFE07A; --white:#FFFFFF; --mist:#F7F2E8;
 
       --ff-body:'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      --ff-display:'Cinzel', serif;
-      --ff-ui:'Teko', sans-serif;
+      --ff-display:'Cinzel', serif; --ff-ui:'Teko', sans-serif;
     }
 
     body{
@@ -37,8 +28,7 @@
         radial-gradient(1000px 600px at 12% 12%, rgba(242,194,73,.08), transparent 60%),
         radial-gradient(1000px 600px at 88% 88%, rgba(231,167,46,.08), transparent 60%),
         linear-gradient(135deg,var(--ebony) 0%, #15100C 55%, #1C160F 100%);
-      min-height:100vh;color:var(--mist);overflow-x:hidden;position:relative;
-      letter-spacing:.1px; line-height:1.6;
+      min-height:100vh;color:var(--mist);overflow-x:hidden;position:relative;letter-spacing:.1px; line-height:1.6;
     }
 
     /* Preloader */
@@ -49,65 +39,37 @@
       transition:opacity .5s ease, visibility .5s ease;
     }
     #preloader.hidden{opacity:0;visibility:hidden}
-    #logo{
-      width:260px;max-width:80vw;height:auto;
-      animation:logoFloat 2.5s ease-in-out infinite;
-      filter:drop-shadow(0 10px 30px rgba(255,208,112,.35))
-    }
+    #logo{width:260px;max-width:80vw;height:auto;animation:logoFloat 2.5s ease-in-out infinite;filter:drop-shadow(0 10px 30px rgba(255,208,112,.35))}
     @keyframes logoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
     .loading-progress{margin-top:30px;width:320px;max-width:80vw}
-    .progress-bar-container{
-      width:100%;height:4px;background:rgba(255,224,122,.22);
-      border-radius:10px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.35)
-    }
-    .progress-bar-fill{
-      height:100%;
-      background:linear-gradient(90deg,var(--gold),var(--gold-soft),var(--glow));
-      background-size:200% 100%;width:0%;border-radius:10px;transition:width .1s linear;
-      animation:shimmer 1.5s infinite;box-shadow:0 0 10px rgba(255,224,122,.45)
-    }
+    .progress-bar-container{width:100%;height:4px;background:rgba(255,224,122,.22);border-radius:10px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.35)}
+    .progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-soft),var(--glow));background-size:200% 100%;width:0%;border-radius:10px;transition:width .1s linear;animation:shimmer 1.5s infinite;box-shadow:0 0 10px rgba(255,224,122,.45)}
     @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
     .progress-text{margin-top:10px;font-size:.85rem;color:var(--gold-soft);text-align:center;letter-spacing:.5px}
 
     /* Layout */
-    .container{
-      position:relative; z-index:1; min-height:100vh;
-      display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px;
-    }
-
-    .header-section{
-      text-align:center; margin-bottom:72px; animation:fadeInDown 1s ease;
-      max-width:960px; margin-left:auto; margin-right:auto;
-    }
+    .container{position:relative; z-index:1; min-height:100vh;display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px}
+    .header-section{ text-align:center; margin-bottom:72px; animation:fadeInDown 1s ease; max-width:960px; margin-left:auto; margin-right:auto }
     @keyframes fadeInDown{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
 
     .event-badge{
       display:inline-block; padding:8px 18px; border-radius:999px;
       background:linear-gradient(135deg,var(--gold),var(--gold-soft));
       font-family:var(--ff-ui); font-size:clamp(.8rem,2.2vw,.95rem); line-height:1; letter-spacing:.4px;
-      color:#2D1D0E; margin-bottom:18px; box-shadow:0 4px 20px rgba(255,208,112,.28);
-      text-transform:uppercase;
+      color:#2D1D0E; margin-bottom:18px; box-shadow:0 4px 20px rgba(255,208,112,.28); text-transform:uppercase;
     }
 
     h1{
       font-family:var(--ff-display); font-weight:700; line-height:1.12;
       font-size:clamp(2.2rem,5vw,3.6rem); margin-bottom:14px; letter-spacing:.2px;
-      background:linear-gradient(135deg,var(--gold-soft),#FFF3CF);
-      -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+      background:linear-gradient(135deg,var(--gold-soft),#FFF3CF); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
     }
-    .subtitle{
-      max-width:640px; margin:0 auto;
-      color:rgba(247,242,232,.92); font-size:clamp(1rem,2.2vw,1.1rem);
-    }
+    .subtitle{ max-width:640px; margin:0 auto; color:rgba(247,242,232,.92); font-size:clamp(1rem,2.2vw,1.1rem) }
 
     /* Gift */
-    .gift-wrapper{animation:fadeInUp 1s ease .25s both; margin-top:12px;width:100%; display:grid; place-items:center;}
+    .gift-wrapper{animation:fadeInUp 1s ease .25s both; margin-top:12px;width:100%; display:grid; place-items:center}
     @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-
-    .gift-container{
-      perspective:1000px; width:100%; max-width:100%;
-      display:flex; justify-content:center; align-items:center; text-align:center;
-    }
+    .gift-container{perspective:1000px; width:100%; max-width:100%; display:flex; justify-content:center; align-items:center; text-align:center}
 
     .gift-box{
       width:clamp(200px,40vw,280px); height:clamp(200px,40vw,280px);
@@ -115,30 +77,23 @@
         radial-gradient(120px 120px at 50% 30%, rgba(255,224,122,.20), transparent 60%),
         linear-gradient(135deg,#2A1F14 0%, #1B140E 100%);
       border-radius:22px; display:flex; flex-direction:column; justify-content:center; align-items:center;
-      cursor:pointer; transition:all .35s cubic-bezier(.4,0,.2,1); margin-top:24px;
-      margin-left:auto; margin-right:auto;
-      box-shadow:
-        0 0 0 2px rgba(255,208,112,.22),
-        0 0 35px rgba(255,208,112,.22),
-        0 22px 62px rgba(0,0,0,.45),
-        inset 0 1px 0 rgba(255,255,255,.08);
+      cursor:pointer; transition:all .35s cubic-bezier(.4,0,.2,1); margin-top:24px; margin-left:auto; margin-right:auto;
+      box-shadow:0 0 0 2px rgba(255,208,112,.22), 0 0 35px rgba(255,208,112,.22), 0 22px 62px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.08);
     }
     .gift-box:hover{transform:translateY(-6px) scale(1.015);box-shadow:0 0 0 2px rgba(255,208,112,.32),0 0 45px rgba(255,208,112,.38),0 28px 72px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.12)}
-    .gift-box.opened{animation:giftOpen .8s cubic-bezier(.68,-.55,.265,1.55);pointer-events:none;transform-origin:center}
+    /* 👉 ya NO bloqueamos los clics cuando está abierta */
+    .gift-box.opened{animation:giftOpen .8s cubic-bezier(.68,-.55,.265,1.55);transform-origin:center}
     @keyframes giftOpen{0%{transform:scale(1) rotateY(0)}50%{transform:scale(1.08) rotateY(180deg)}100%{transform:scale(.96) rotateY(360deg)}}
     .gift-icon{font-size:clamp(4rem,12vw,6rem);margin-bottom:8px;animation:giftFloat 3s ease-in-out infinite; filter:drop-shadow(0 6px 18px rgba(255,208,112,.35))}
     @keyframes giftFloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(5deg)}}
 
-    .gift-label{
-      font-family:var(--ff-display); font-weight:700;
-      font-size:clamp(1.1rem,2.4vw,1.35rem); letter-spacing:.3px; color:#fff;
-      text-shadow:0 2px 10px rgba(0,0,0,.35);
-    }
+    .gift-label{font-family:var(--ff-display); font-weight:700; font-size:clamp(1.1rem,2.4vw,1.35rem); letter-spacing:.3px; color:#fff; text-shadow:0 2px 10px rgba(0,0,0,.35)}
 
     .instruction-text{
       margin-top:26px; font-family:var(--ff-ui); letter-spacing:.3px;
       font-size:clamp(1rem,2.2vw,1.15rem); color:var(--gold-soft);
       text-align:center; font-weight:600; animation:pulse 2s ease-in-out infinite;
+      cursor:pointer; /* 👉 para indicar que se puede tocar para reabrir */
     }
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
 
@@ -155,22 +110,9 @@
     }
     @keyframes modalIn{from{opacity:0;transform:scale(.85) translateY(40px)}to{opacity:1;transform:scale(1) translateY(0)}}
     .modal-datetime{font-size:.85rem;color:var(--gold-soft);margin-bottom:12px;letter-spacing:.2px}
-    .modal-title{
-      font-family:var(--ff-display);font-weight:700;
-      font-size:clamp(1.7rem,5vw,2.4rem);
-      background:linear-gradient(135deg,#FFF2C7,var(--gold-soft));
-      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-      margin-bottom:14px
-    }
-    .prize-display{
-      background:linear-gradient(135deg,var(--gold),var(--amber));
-      border-radius:14px;padding:clamp(22px,5vw,34px);margin:18px 0;
-      box-shadow:0 10px 40px rgba(255,208,112,.3),inset 0 1px 0 rgba(255,255,255,.12)
-    }
-    .prize-text{
-      font-family:var(--ff-ui);letter-spacing:.4px;
-      font-size:clamp(1.5rem,4.5vw,2rem);font-weight:600;color:#3A2A12
-    }
+    .modal-title{font-family:var(--ff-display);font-weight:700;font-size:clamp(1.7rem,5vw,2.4rem);background:linear-gradient(135deg,#FFF2C7,var(--gold-soft));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:14px}
+    .prize-display{background:linear-gradient(135deg,var(--gold),var(--amber));border-radius:14px;padding:clamp(22px,5vw,34px);margin:18px 0;box-shadow:0 10px 40px rgba(255,208,112,.3),inset 0 1px 0 rgba(255,255,255,.12)}
+    .prize-text{font-family:var(--ff-ui);letter-spacing:.4px;font-size:clamp(1.5rem,4.5vw,2rem);font-weight:600;color:#3A2A12}
     .prize-description{font-size:.95rem;color:rgba(247,242,232,.92);margin-top:10px}
 
     .modal-button{
@@ -182,50 +124,29 @@
     .modal-button:hover{transform:translateY(-2px);box-shadow:0 14px 38px rgba(255,208,112,.45)}
     .modal-button:active{transform:translateY(0)}
 
-    /* ===== Confetti ===== */
-    #confetti{
-      position:fixed; inset:0; overflow:hidden; pointer-events:none;
-      z-index:2147483647;
-    }
+    /* Confetti */
+    #confetti{position:fixed; inset:0; overflow:hidden; pointer-events:none; z-index:2147483647}
     .confetti-piece{
-      position:absolute;
-      top:-10vh; left:0;
-      width:10px; height:10px; background:var(--gold);
-      border-radius:2px;
+      position:absolute; top:-10vh; left:0; width:10px; height:10px; background:var(--gold); border-radius:2px;
       will-change:top,left,transform,opacity;
-      animation:
-        fall var(--t,3s) linear var(--delay,0s) forwards,
-        sway var(--tsway,2s) ease-in-out var(--delay,0s) infinite alternate,
-        spin var(--tspin,1.6s) linear var(--delay,0s) infinite;
+      animation: fall var(--t,3s) linear var(--delay,0s) forwards,
+                 sway var(--tsway,2s) ease-in-out var(--delay,0s) infinite alternate,
+                 spin var(--tspin,1.6s) linear var(--delay,0s) infinite;
       opacity:.95;
     }
     @keyframes fall { to { top:110vh; opacity:0; } }
-    @keyframes sway {
-      from { left: calc(var(--x,50) * 1vw - var(--amp,3vw)); }
-      to   { left: calc(var(--x,50) * 1vw + var(--amp,3vw)); }
-    }
+    @keyframes sway { from { left: calc(var(--x,50) * 1vw - var(--amp,3vw)); } to { left: calc(var(--x,50) * 1vw + var(--amp,3vw)); } }
     @keyframes spin { from { transform:rotate(0deg) } to { transform:rotate(720deg) } }
 
-    /* Botón de sonido (fallback) */
-    .sound-toggle{
-      position:fixed; right:14px; bottom:14px; z-index:2147483647;
-      background:linear-gradient(135deg,var(--gold),var(--amber));
-      color:#2D1D0E; border:none; border-radius:999px; padding:10px 14px;
-      font-family:var(--ff-ui); font-weight:700; letter-spacing:.3px;
-      box-shadow:0 8px 22px rgba(255,208,112,.45); cursor:pointer; display:none;
-    }
+    /* Toggle sonido */
+    .sound-toggle{position:fixed; right:14px; bottom:14px; z-index:2147483647;background:linear-gradient(135deg,var(--gold),var(--amber));color:#2D1D0E;border:none;border-radius:999px;padding:10px 14px;font-family:var(--ff-ui);font-weight:700;letter-spacing:.3px;box-shadow:0 8px 22px rgba(255,208,112,.45);cursor:pointer;display:none}
     .sound-toggle.show{display:inline-flex; align-items:center; gap:8px}
     .sound-toggle svg{width:18px;height:18px}
     .sound-hint{position:fixed; bottom:58px; right:14px; font-size:.8rem; color:var(--gold-soft); opacity:.9}
 
     @media (prefers-reduced-motion:reduce){
       #logo,.header-section,.gift-box,.gift-icon,.modal-content{animation:none !important; transition:none !important;}
-      .confetti-piece{
-        animation:
-          fall var(--t,3s) linear var(--delay,0s) forwards,
-          sway var(--tsway,2s) ease-in-out var(--delay,0s) infinite alternate,
-          spin var(--tspin,1.6s) linear var(--delay,0s) infinite !important;
-      }
+      .confetti-piece{animation: fall var(--t,3s) linear var(--delay,0s) forwards, sway var(--tsway,2s) ease-in-out var(--delay,0s) infinite alternate, spin var(--tspin,1.6s) linear var(--delay,0s) infinite !important;}
     }
 
     @media (max-width:768px){.header-section{margin-bottom:44px}.modal-content{margin:18px}}
@@ -235,7 +156,6 @@
 <body>
   <!-- Preloader -->
   <div id="preloader" aria-hidden="true">
-    <!-- Cambiá por tu logo real -->
     <img src="assets/sala-dorada-logo.png" id="logo" alt="La Sala Dorada">
     <div class="loading-progress">
       <div class="progress-bar-container"><div class="progress-bar-fill" id="progressBar"></div></div>
@@ -279,7 +199,7 @@
   <!-- Audio -->
   <audio id="audio" src="assets/sound.mp3" preload="auto" playsinline></audio>
 
-  <!-- Toggle sonido (autoplay fallback) -->
+  <!-- Toggle sonido -->
   <button id="soundToggle" class="sound-toggle" type="button" aria-label="Activar sonido">
     <svg viewBox="0 0 24 24" fill="none"><path d="M3 10v4h4l5 4V6L7 10H3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
     Activar sonido
@@ -287,8 +207,7 @@
   <div id="soundHint" class="sound-hint" style="display:none;">Toque para habilitar audio</div>
 
   <script>
-    /* ===== Probabilidades ponderadas =====
-       Bonos con mayor presencia; fichas grandes muy raras */
+    /* ===== Probabilidades ponderadas ===== */
     const PREMIOS = [
       { label:"💸 10.000 FICHAS GRATIS", weight:0.5  },
       { label:"🎉 3.000 FICHAS GRATIS",   weight:2.0  },
@@ -319,21 +238,12 @@
     /* ===== Audio: autoplay con fallback ===== */
     audio.loop = true;
     async function tryAutoPlay(){
-      try{
-        await audio.play();
-        soundToggle.classList.remove('show');
-        soundHint.style.display='none';
-      }catch(err){
-        soundToggle.classList.add('show');
-        soundHint.style.display='block';
+      try{ await audio.play(); soundToggle.classList.remove('show'); soundHint.style.display='none'; }
+      catch(err){
+        soundToggle.classList.add('show'); soundHint.style.display='block';
         const unlock = async () => {
-          try{
-            await audio.play();
-            soundToggle.classList.remove('show');
-            soundHint.style.display='none';
-            window.removeEventListener('pointerdown', unlock);
-            window.removeEventListener('keydown', unlock);
-          }catch(e){}
+          try{ await audio.play(); soundToggle.classList.remove('show'); soundHint.style.display='none';
+               window.removeEventListener('pointerdown', unlock); window.removeEventListener('keydown', unlock); } catch(e){}
         };
         soundToggle.addEventListener('click', unlock, { once:true });
         window.addEventListener('pointerdown', unlock, { once:true });
@@ -351,27 +261,29 @@
       tryAutoPlay();
     });
 
-    /* ===== Estado previo (clave única para esta marca) ===== */
+    /* ===== Estado previo (clave única) ===== */
     const STORAGE_KEY = "premioSalaDorada";
     if(localStorage.getItem(STORAGE_KEY)){
       giftBox.classList.add("opened");
-      instructionText.textContent="Ya reclamaste tu premio";
-      instructionText.style.opacity="0.6";
+      instructionText.textContent = "Ya reclamaste tu premio • Tocá el regalo para verlo de nuevo";
+      instructionText.style.opacity = "0.85";
     }
 
     /* ===== Interacción caja ===== */
     giftBox.addEventListener("click",()=>{
       const previo=localStorage.getItem(STORAGE_KEY);
-      if(previo){
-        mostrarPremio(previo);
-        lanzarConfetti();
-        return;
-      }
+      if(previo){ mostrarPremio(previo); lanzarConfetti(); return; }
       const premio = pickWeighted(PREMIOS);
       localStorage.setItem(STORAGE_KEY,premio);
       giftBox.classList.add("opened");
       instructionText.style.opacity="0";
       setTimeout(()=>{mostrarPremio(premio);lanzarConfetti();},800);
+    });
+
+    /* 👉 permitir reabrir tocando el texto guía */
+    instructionText.addEventListener('click',()=>{
+      const g = localStorage.getItem(STORAGE_KEY);
+      if(g) mostrarPremio(g);
     });
 
     /* ===== Modal ===== */
@@ -385,8 +297,8 @@
     }
     function cerrarModal(){
       resultModal.classList.remove('show');
-      instructionText.textContent="Ya reclamaste tu premio";
-      instructionText.style.opacity="0.6";
+      instructionText.textContent = "Ya reclamaste tu premio • Tocá el regalo para verlo de nuevo";
+      instructionText.style.opacity = "0.85";
     }
     resultModal.addEventListener('click',(e)=>{if(e.target===resultModal)cerrarModal();});
 
@@ -405,23 +317,19 @@
         const tsway=(Math.random()*1.5+1.6)+'s';
         const tspin=(Math.random()*1.2+1)+'s';
         const delay=(Math.random()*0.7)+'s';
-
         c.style.setProperty('--x', x);
         c.style.setProperty('--amp', amp);
         c.style.setProperty('--t', t);
         c.style.setProperty('--tsway', tsway);
         c.style.setProperty('--tspin', tspin);
         c.style.setProperty('--delay', delay);
-
         c.style.width=size+'px';
         c.style.height=size+'px';
         c.style.background=colors[Math.floor(Math.random()*colors.length)];
-
         confettiLayer.appendChild(c);
         setTimeout(()=>c.remove(), 6000);
       }
     }
-
   </script>
 </body>
 </html>
