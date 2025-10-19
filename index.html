@@ -422,19 +422,6 @@
       }
     }
 
-    /* ===== Reset por teclado (R) ===== */
-    function resetPremio(){
-      localStorage.removeItem(STORAGE_KEY);
-      giftBox.classList.remove("opened");
-      instructionText.textContent="Tocá el regalo para descubrir tu premio";
-      instructionText.style.opacity="1";
-      alert("Premio reiniciado. Podés volver a reclamarlo.");
-    }
-    document.addEventListener('keydown',(e)=>{
-      if(e.key.toLowerCase()==='r'){
-        if(confirm("¿Reiniciar el premio?")) resetPremio();
-      }
-    });
   </script>
 </body>
 </html>
